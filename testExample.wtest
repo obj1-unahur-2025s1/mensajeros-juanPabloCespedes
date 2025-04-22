@@ -1,9 +1,31 @@
-import example.pepita
+import bolichito-juanPabloCespedes.personas.*
+import mensajeros-juanPabloCespedes.example.*
+
 
 describe "group of tests for pepita" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  test "roberto puede llevar paquete  " {
+    assert.that(roberto.puedeLlevarPaqueteADestino(paqueteOriginal))
   }
-
+   test "neo no puede llevar paquete  " {
+    assert.that(!neo.puedeLlevarPaqueteADestino(paquetito))
+  }
+// Segunda Parte
+  
+   test "es grande la mensajeria  " {
+    
+   
+    empresaDeMensajeria.contratarAMensajero(juan)
+    empresaDeMensajeria.contratarAMensajero(neo)
+    empresaDeMensajeria.contratarAMensajero(roberto)
+    assert.that(empresaDeMensajeria.esGrandeLaMensajeria()) 
+  }
+  test "puede ser entregado  " {
+    
+   
+    empresaDeMensajeria.contratarAMensajero(juan)
+    
+    
+    assert.that(empresaDeMensajeria.puedeEntregarPaqueteElPrimerMensajero(paquete1)) 
+  }
 }
